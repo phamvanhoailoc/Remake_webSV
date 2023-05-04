@@ -92,7 +92,7 @@
 	<body class="">
 
 		<!-- HEADER -->
-		<header id="header">
+		<header id="header" style="width: 100%;z-index: 1000; position:fixed;">
 			<div id="logo-group">
 
 				<!-- PLACE YOUR LOGO HERE -->
@@ -361,7 +361,7 @@
 					<li>
 						<a href="#"><i class="fa fa-lg fa-fw fa-book"></i> <span class="menu-item-parent">Học tập</span></a>
 						<ul>
-							<li>
+							<li class="active">
 								<a href="flot.html">Thời khóa biểu</a>
 							</li>
 							<li>
@@ -416,7 +416,7 @@
 						</ul>
 						
 					</li>
-					<li class="active">
+					<li>
 						<a href="#"><i class="fa fa-lg fa-fw fa-cog"></i> <span class="menu-item-parent">Cài đặt tài khoản</span></a>	
 					</li>	
 					<li>
@@ -483,7 +483,7 @@
 			<!-- MAIN CONTENT -->
 			<div id="content">
 
-				<div class="row">
+				<!-- <div class="row">
 					<div class="col-xs-12 col-sm-7 col-md-7 col-lg-4">
 						<h1 class="page-title txt-color-blueDark"><i class="fa fa-calendar fa-fw "></i> 
 							Calendar
@@ -514,25 +514,25 @@
 							</li>
 						</ul>
 					</div>
-				</div>
+				</div> -->
 				<!-- row -->
 				
 				<div class="row">
 				
-					<div class="col-sm-12 col-md-12 col-lg-3">
+					<!-- <div class="col-sm-12 col-md-12 col-lg-3"> -->
 						<!-- new widget -->
-						<div class="jarviswidget jarviswidget-color-blueDark">
-							<header>
+						<!-- <div class="jarviswidget jarviswidget-color-blueDark"> -->
+							<!-- <header>
 								<h2> Add Events </h2>
-							</header>
+							</header> -->
 				
 							<!-- widget div-->
-							<div>
+							<!-- <div> -->
 				
-								<div class="widget-body">
+								<!-- <div class="widget-body"> -->
 									<!-- content goes here -->
 				
-									<form id="add-event-form">
+									<!-- <form id="add-event-form">
 										<fieldset>
 				
 											<div class="form-group">
@@ -603,17 +603,17 @@
 												</div>
 											</div>
 										</div>
-									</form>
+									</form> -->
 				
 									<!-- end content -->
-								</div>
+								<!-- </div>
 				
-							</div>
+							</div> -->
 							<!-- end widget div -->
-						</div>
+						<!-- </div> -->
 						<!-- end widget -->
 				
-						<div class="well well-sm" id="event-container">
+						<!-- <div class="well well-sm" id="event-container">
 							<form>
 								<fieldset>
 									<legend>
@@ -639,10 +639,16 @@
 								</fieldset>
 							</form>
 				
+						</div> -->
+					<!-- </div> -->
+					<div class="col-sm-12 col-md-12 col-lg-12">
+						<div class="alert alert-warning fade in">
+							<!-- <button class="close" data-dismiss="alert">
+								×
+							</button> -->
+							<i class="fa-fw fa fa-warning"></i>
+							<strong>Chú ý:</strong> Sinh viên thường xuyên theo dõi thời khoá biểu để sớm cập nhật thông tin mới nhất!
 						</div>
-					</div>
-					<div class="col-sm-12 col-md-12 col-lg-9">
-				
 						<!-- new widget -->
 						<div class="jarviswidget jarviswidget-color-blueDark">
 				
@@ -661,23 +667,23 @@
 							-->
 							<header>
 								<span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
-								<h2> My Events </h2>
+								<h1> Thời khóa biểu </h1>
 								<div class="widget-toolbar">
 									<!-- add: non-hidden - to disable auto hide -->
 									<div class="btn-group">
 										<button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
-											Showing <i class="fa fa-caret-down"></i>
+											Hiển thị theo <i class="fa fa-caret-down"></i>
 										</button>
 										<ul class="dropdown-menu js-status-update pull-right">
 											<li>
-												<a href="javascript:void(0);" id="mt">Month</a>
+												<a href="javascript:void(0);" id="td">Ngày</a>
 											</li>
 											<li>
-												<a href="javascript:void(0);" id="ag">Agenda</a>
+												<a href="javascript:void(0);" id="ag">Tuần</a>
 											</li>
 											<li>
-												<a href="javascript:void(0);" id="td">Today</a>
-											</li>
+												<a href="javascript:void(0);" id="mt">Tháng</a>
+											</li>	
 										</ul>
 									</div>
 								</div>
@@ -699,7 +705,61 @@
 										</div>
 									</div>
 									<div id="calendar"></div>
-				
+									<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+										  <div class="modal-content" style="background-color: #f1f1f1;">
+											<div class="modal-header">
+											  <h1 class="modal-title text-center" style="font-weight: 700;" id="eventModalLabel">Event Details</h1>
+											  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+												<span aria-hidden="true">&times;</span>
+											  </button>
+											</div>
+											<div class="modal-body">
+												<div class="widget-body">
+													<div style="margin-bottom: 2px;">
+														<h4 style="text-decoration: underline;">Thông tin chi tiết:</h4>
+													</div>
+													
+													<div class="well">
+													
+														<table class="table table-condensed table-detail">
+															
+															<tbody>
+																<tr>
+																	<td style="border: none;">Lớp:</td>
+																	<td style="border: none;font-weight: bold;" id="eventlop">Row 2</td>
+																</tr>
+																<tr>
+																	<td style="border: none;">Phòng học:</td>
+																	<td style="border: none;font-weight: bold;" id="eventphonghoc">Row 2</td>
+																</tr>
+																<tr>
+																	<td style="border: none;">Thứ:</td>
+																	<td style="border: none;" id="eventthu">Row 2</td>		
+																</tr>
+																<tr>
+																	<td style="border: none;">Tiết:</td>
+																	<td style="border: none;font-weight: bold;" id="eventtiet">Row 2</td>		
+																</tr>
+																<tr>
+																	<td style="border: none;">Giảng viên:</td>
+																	<td style="border: none;" id="eventgiangvien">Row 2</td>		
+																</tr>
+															
+															</tbody>
+														</table>
+														
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer" style="padding: 20px;text-align: right;border-top: 1px solid #e5e5e5;">
+											  <button type="button" class="btn btn-default" data-dismiss="modal">Quay lại</button>
+											  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+											</div>
+										  </div>
+										</div>
+									  </div>
+									  
 									<!-- end content -->
 								</div>
 				
@@ -862,10 +922,10 @@
 			    "use strict";
 			
 			    var date = new Date();
+				var month = ["Tháng một", "Tháng hai", "Tháng ba", "Tháng tư", "Tháng năm", "Tháng sáu", "Tháng bảy", "Tháng tám", "Tháng chín", "Tháng mười", "Tháng mười một", "Tháng mười hai"];
 			    var d = date.getDate();
 			    var m = date.getMonth();
 			    var y = date.getFullYear();
-			
 			    var hdr = {
 			        left: 'title',
 			        center: 'month,agendaWeek,agendaDay',
@@ -877,7 +937,11 @@
 			        // it doesn't need to have a start or end
 			
 			        var eventObject = {
-			            title: $.trim(e.children().text()), // use the element's text as the event title
+			            title: $.trim(e.children().text()),
+						phong: $.trim(e.children().text()),
+						lop: $.trim(e.children().text()),
+						tiet: $.trim(e.children().text()),
+						giangvien: $.trim(e.children().text()), // use the element's text as the event title
 			            description: $.trim(e.children('span').attr('data-description')),
 			            icon: $.trim(e.children('span').attr('data-icon')),
 			            className: $.trim(e.children('span').attr('class')) // use the element's children as the event class
@@ -925,12 +989,22 @@
 			
 			    /* initialize the calendar
 				 -----------------------------------------------------------------*/
-			
+				 function handleEventClick(event) {
+					$('#eventModalLabel').text(event.title); 
+					$('#eventlop').text(event.lop); // Set title của modal thành tiêu đề của sự kiện
+					$('#eventphonghoc').text(event.phong); // Set title của modal thành tiêu đề của sự kiện
+					$('#eventtiet').text(event.tiet); // Set title của modal thành tiêu đề của sự kiện
+					$('#eventgiangvien').text(event.giangvien); // Set title của modal thành tiêu đề của sự kiện
+					$('#eventthu').text(event.start); // Set title của modal thành tiêu đề của sự kiện
+					$('#eventModal').modal(); // Mở modal
+					}
 			    $('#calendar').fullCalendar({
 			
+					defaultView: 'agendaDay',
+					default: '07:00:00',
 			        header: hdr,
-			        editable: true,
-			        droppable: true, // this allows things to be dropped onto the calendar !!!
+			        editable: false,
+			        droppable: false, // this allows things to be dropped onto the calendar !!!
 			
 			        drop: function (date, allDay) { // this function is called when something is dropped
 			
@@ -945,6 +1019,7 @@
 			            copiedEventObject.allDay = allDay;
 			
 			            // render the event on the calendar
+
 			            // the last `true` argument determines if the event "sticks" (http://arshaw.com/fullcalendar/docs/event_rendering/renderEvent/)
 			            $('#calendar').fullCalendar('renderEvent', copiedEventObject, true);
 			
@@ -955,6 +1030,7 @@
 			            }
 			
 			        },
+					
 			
 			        select: function (start, end, allDay) {
 			            var title = prompt('Event Title:');
@@ -963,73 +1039,118 @@
 			                        title: title,
 			                        start: start,
 			                        end: end,
+									tiet: tiet,
+									phong: phong,
+									lop: lop,
+									giangvien: giangvien,
 			                        allDay: allDay
 			                    }, true // make the event "stick"
 			                );
 			            }
 			            calendar.fullCalendar('unselect');
 			        },
-			
-			        events: [{
-			            title: 'All Day Event',
-			            start: new Date(y, m, 1),
-			            description: 'long description',
-			            className: ["event", "bg-color-greenLight"],
-			            icon: 'fa-check'
-			        }, {
-			            title: 'Long Event',
-			            start: new Date(y, m, d - 5),
-			            end: new Date(y, m, d - 2),
-			            className: ["event", "bg-color-red"],
-			            icon: 'fa-lock'
-			        }, {
-			            id: 999,
-			            title: 'Repeating Event',
-			            start: new Date(y, m, d - 3, 16, 0),
-			            allDay: false,
-			            className: ["event", "bg-color-blue"],
-			            icon: 'fa-clock-o'
-			        }, {
-			            id: 999,
-			            title: 'Repeating Event',
-			            start: new Date(y, m, d + 4, 16, 0),
-			            allDay: false,
-			            className: ["event", "bg-color-blue"],
-			            icon: 'fa-clock-o'
-			        }, {
-			            title: 'Meeting',
-			            start: new Date(y, m, d, 10, 30),
+					eventClick: handleEventClick,
+					// slotMinTime: '07:00:00',
+					// eventClick: function(info) {
+      				// alert('Title: ');},
+			        events: [
+					// 	{
+			        //     title: 'All Day Event',
+			        //     start: new Date(y, m, 1),
+			        //     description: 'long description',
+											
+			        //     className: ["event", "bg-color-greenLight"],
+			        //     icon: 'fa-check'
+			        // },
+					 {
+			            title: 'Lập trình web',
+						tiet: '2-7',
+						lop: '19DTHA2',
+						phong:'B09.11',
+						giangvien: 'Phạm Văn Hoài Lộc',
+			            start: new Date(y, m, d - 1,07,30),
+			            end: new Date(y, m, d - 1,11,30),
+			            className: ["event", "bg-color-darken"]
+			            
+			        },
+					//  {
+			        //     id: 999,
+			        //     title: 'Repeating Event',
+			        //     start: new Date(y, m, d - 3, 16, 0),
+			        //     allDay: false,
+			        //     className: ["event", "bg-color-blue"],
+			        //     icon: 'fa-clock-o'
+			        // }, {
+			        //     id: 999,
+			        //     title: 'Repeating Event',
+			        //     start: new Date(y, m, d + 4, 16, 0),
+			        //     allDay: false,
+			        //     className: ["event", "bg-color-blue"],
+			        //     icon: 'fa-clock-o'
+			        // },
+					 {
+			            title: 'Lập trình C',
+						tiet: '2-7',
+						lop: '19DTHA2',
+						phong:'B09.11',
+						giangvien: 'Phạm Văn Hoài Lộc',
+			            start: new Date(y, m, d, 07, 30),
+						end: new Date(y, m, d,11,30),
 			            allDay: false,
 			            className: ["event", "bg-color-darken"]
 			        }, {
-			            title: 'Lunch',
-			            start: new Date(y, m, d, 12, 0),
-			            end: new Date(y, m, d, 14, 0),
+			            title: 'Tiếng anh 2',
+						tiet: '2-7',
+						lop: '19DTHA2',
+						phong:'B09.11',
+						giangvien: 'Phạm Văn Hoài Lộc',
+			            start: new Date(y, m, d, 12, 30),
+			            end: new Date(y, m, d, 16, 30),
 			            allDay: false,
 			            className: ["event", "bg-color-darken"]
-			        }, {
-			            title: 'Birthday Party',
-			            start: new Date(y, m, d + 1, 19, 0),
-			            end: new Date(y, m, d + 1, 22, 30),
+			        },
+
+					{
+			            title: 'Lập trình hướng đối tượng',
+						tiet: '2-7',
+						lop: '19DTHA2',
+						phong:'B09.11',
+						giangvien: 'Phạm Văn Hoài Lộc',
+			            start: new Date(y, m, d + 1, 07, 30),
+			            end: new Date(y, m, d + 1, 11, 30),
 			            allDay: false,
 			            className: ["event", "bg-color-darken"]
-			        }, {
-			            title: 'Smartadmin Open Day',
-			            start: new Date(y, m, 28),
-			            end: new Date(y, m, 29),
-			            className: ["event", "bg-color-darken"]
-			        }],
-			
+			        },
+					//  {
+			        //     title: 'Smartadmin Open Day',
+			        //     start: new Date(y, m, 28),
+			        //     end: new Date(y, m, 29),
+			        //     className: ["event", "bg-color-darken"]
+			        // }
+				],
+					// eventRender: function(info) {
+					// 	var start = moment(info.event.start).locale('vi').format('LL'); // định dạng ngày tháng bằng tiếng Việt
+					// 	info.el.querySelector('.fc-title').innerHTML += '<br>' + start; // hiển thị ngày tháng
+					// 	},
 			        eventRender: function (event, element, icon) {
+				
 			            if (!event.description == "") {
 			                element.find('.fc-title').append("<br/><span class='ultra-light'>" + event.description +
 			                    "</span>");
 			            }
+
+						if (!event.phong == "") {
+							
+			                element.find('.fc-title').append("<br/><span class='ultra-light'>" + event.phong +
+			                    "</span>");
+			            }
+						
 			            if (!event.icon == "") {
 			                element.find('.fc-title').append("<i class='air air-top-right fa " + event.icon +
 			                    " '></i>");
 			            }
 			        },
+					
 			
 			        windowResize: function (event, ui) {
 			            $('#calendar').fullCalendar('render');

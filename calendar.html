@@ -14,6 +14,8 @@
 		<link rel="stylesheet" type="text/css" media="screen" href="css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="css/font-awesome.min.css">
 
+
+
 		<!-- SmartAdmin Styles : Caution! DO NOT change the order -->
 		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production-plugins.min.css">
 		<link rel="stylesheet" type="text/css" media="screen" href="css/smartadmin-production.min.css">
@@ -449,7 +451,7 @@
 		<!-- END NAVIGATION -->
 
 		<!-- MAIN PANEL -->
-		<div id="main" role="main">
+		<div id="main" role="main" style="padding-top:49px">
 
 			<!-- RIBBON -->
 			<div id="ribbon">
@@ -462,7 +464,7 @@
 
 				<!-- breadcrumb -->
 				<ol class="breadcrumb">
-					<li>Home</li><li>Cool Features!</li><li>3 Calendar</li>
+					<li><a href="index.html">Trang chủ</a></li><li>Học tập</li><li>Thời khóa biểu</li>
 				</ol>
 				<!-- end breadcrumb -->
 
@@ -641,16 +643,10 @@
 				
 						</div> -->
 					<!-- </div> -->
-					<div class="col-sm-12 col-md-12 col-lg-12">
-						<div class="alert alert-warning fade in">
-							<!-- <button class="close" data-dismiss="alert">
-								×
-							</button> -->
-							<i class="fa-fw fa fa-warning"></i>
-							<strong>Chú ý:</strong> Sinh viên thường xuyên theo dõi thời khoá biểu để sớm cập nhật thông tin mới nhất!
-						</div>
+					<div class=" ">
+						
 						<!-- new widget -->
-						<div class="jarviswidget jarviswidget-color-blueDark">
+						<div class=" ">
 				
 							<!-- widget options:
 							usage: <div class="jarviswidget" id="wid-id-0" data-widget-editbutton="false">
@@ -665,100 +661,152 @@
 							data-widget-sortable="false"
 				
 							-->
-							<header>
-								<span class="widget-icon"> <i class="fa fa-calendar"></i> </span>
-								<h1> Thời khóa biểu </h1>
-								<div class="widget-toolbar">
-									<!-- add: non-hidden - to disable auto hide -->
-									<div class="btn-group">
-										<button class="btn dropdown-toggle btn-xs btn-default" data-toggle="dropdown">
-											Hiển thị theo <i class="fa fa-caret-down"></i>
-										</button>
-										<ul class="dropdown-menu js-status-update pull-right">
-											<li>
-												<a href="javascript:void(0);" id="td">Ngày</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" id="ag">Tuần</a>
-											</li>
-											<li>
-												<a href="javascript:void(0);" id="mt">Tháng</a>
-											</li>	
-										</ul>
+							<div style="margin: 0 1.5rem 0 1.5rem !important; position: relative;">
+								<div class="row " style="margin-bottom: 1rem;">
+									<div class="col-md-3">
+										<h1 style="margin: 12px 0 28px;"> <i class="fa fa-graduation-cap"></i>Thời khóa biểu </h1>
 									</div>
+									<div class="col-md-3">
+										<div style="margin-top: 1rem;">
+											<!-- add: non-hidden - to disable auto hide -->
+											<div class="btn-group">
+												<button class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+													Hiển thị theo <i class="fa fa-caret-down"></i>
+												</button>
+												<ul class="dropdown-menu js-status-update pull-right">
+													<li class="active">
+														<a href="javascript:void(0);" id="td">Ngày</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);" id="ag">Tuần</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);" id="mt">Tháng</a>
+													</li>
+													<li>
+														<a href="javascript:void(0);" id="list">List</a>
+													</li>	
+												</ul>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-6" style="margin-top: 1rem;">
+												
+											
+												<div class="row">
+													<div class="col-xs-2">
+														<div id="calendar-buttons">	
+														<button href="javascript:void(0)" class="btn btn-primary" id="btn-prev"><i class="fa fa-chevron-left"></i></button>
+														</div>
+													</div>
+													<div id="weekcalendar" style="display: none;" class="col-xs-8">
+														<label style="padding: 6px;font-size: 17px;">Từ ngày</label>
+														<strong style="font-size:17px" id="from_day">27/03/2023</strong>
+														<label style="padding: 6px;font-size: 17px;">Đến</label>
+														<strong style="font-size:17px" id="to_day">02/04/2023</strong>
+													</div>
+													<div id="daycalendar" class="col-xs-8" style="display: block;text-align: center;padding: 13px 0 0 0;">
+														
+														<strong style="font-size:17px;padding: 6px;" id="today">27/03/2023</strong>
+														
+													</div>
+													<div id="monthcalendar" class="col-xs-8" style="display: none;text-align: center;padding: 13px 0 0 0;">
+														
+														<strong style="font-size:17px;padding: 6px;" id="tomonth">03/2023</strong>
+														
+													</div>
+													<div class="col-xs-2">
+														<div id="calendar-buttons">	
+														<button href="javascript:void(0)" class="btn btn-primary" id="btn-next"><i class="fa fa-chevron-right"></i></button>
+														</div>
+													</div>
+													
+													
+												</div>
+											
+										
+									</div>
+									
 								</div>
-							</header>
+								
+								
+							</div>
 				
 							<!-- widget div-->
 							<div>
 				
-								<div class="widget-body no-padding">
+								<div class="">
 									<!-- content goes here -->
-									<div class="widget-body-toolbar">
-				
-										<div id="calendar-buttons">
-				
-											<div class="btn-group">
-												<a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-prev"><i class="fa fa-chevron-left"></i></a>
-												<a href="javascript:void(0)" class="btn btn-default btn-xs" id="btn-next"><i class="fa fa-chevron-right"></i></a>
+									<div style="margin: 0 1.5rem 0 1.5rem; position: relative;">
+										<div class="well">
+											<div class="alert alert-warning fade in">
+												<!-- <button class="close" data-dismiss="alert">
+													×
+												</button> -->
+												<i class="fa-fw fa fa-warning"></i>
+												<strong>Chú ý:</strong> Sinh viên thường xuyên theo dõi thời khoá biểu để sớm cập nhật thông tin mới nhất!
 											</div>
-										</div>
-									</div>
-									<div id="calendar"></div>
-									<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
-										<div class="modal-dialog" role="document">
-										  <div class="modal-content" style="background-color: #f1f1f1;">
-											<div class="modal-header">
-											  <h1 class="modal-title text-center" style="font-weight: 700;" id="eventModalLabel">Event Details</h1>
-											  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-												<span aria-hidden="true">&times;</span>
-											  </button>
-											</div>
-											<div class="modal-body">
-												<div class="widget-body">
-													<div style="margin-bottom: 2px;">
-														<h4 style="text-decoration: underline;">Thông tin chi tiết:</h4>
+											
+		
+											<div id="calendar"></div>
+											<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+												<div class="modal-dialog" role="document">
+												  <div class="modal-content" style="background-color: #f1f1f1;">
+													<div class="modal-header">
+													  <h1 class="modal-title text-center" style="font-weight: 700;" id="eventModalLabel">Event Details</h1>
+													  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+														<span aria-hidden="true">&times;</span>
+													  </button>
 													</div>
-													
-													<div class="well">
-													
-														<table class="table table-condensed table-detail">
+													<div class="modal-body">
+														<div class="widget-body">
+															<div style="margin-bottom: 2px;">
+																<h4 style="text-decoration: underline;">Thông tin chi tiết:</h4>
+															</div>
 															
-															<tbody>
-																<tr>
-																	<td style="border: none;">Lớp:</td>
-																	<td style="border: none;font-weight: bold;" id="eventlop">Row 2</td>
-																</tr>
-																<tr>
-																	<td style="border: none;">Phòng học:</td>
-																	<td style="border: none;font-weight: bold;" id="eventphonghoc">Row 2</td>
-																</tr>
-																<tr>
-																	<td style="border: none;">Thứ:</td>
-																	<td style="border: none;" id="eventthu">Row 2</td>		
-																</tr>
-																<tr>
-																	<td style="border: none;">Tiết:</td>
-																	<td style="border: none;font-weight: bold;" id="eventtiet">Row 2</td>		
-																</tr>
-																<tr>
-																	<td style="border: none;">Giảng viên:</td>
-																	<td style="border: none;" id="eventgiangvien">Row 2</td>		
-																</tr>
+															<div class="well">
 															
-															</tbody>
-														</table>
-														
+																<table class="table table-condensed table-detail">
+																	
+																	<tbody>
+																		<tr>
+																			<td style="border: none;">Lớp:</td>
+																			<td style="border: none;font-weight: bold;" id="eventlop">Row 2</td>
+																		</tr>
+																		<tr>
+																			<td style="border: none;">Phòng học:</td>
+																			<td style="border: none;font-weight: bold;" id="eventphonghoc">Row 2</td>
+																		</tr>
+																		<tr>
+																			<td style="border: none;">Bắt đầu:</td>
+																			<td style="border: none;" id="eventthu">Row 2</td>		
+																		</tr>
+																		<tr>
+																			<td style="border: none;">Tiết:</td>
+																			<td style="border: none;font-weight: bold;" id="eventtiet">Row 2</td>		
+																		</tr>
+																		<tr>
+																			<td style="border: none;">Giảng viên:</td>
+																			<td style="border: none;" id="eventgiangvien">Row 2</td>		
+																		</tr>
+																	
+																	</tbody>
+																</table>
+																
+															</div>
+														</div>
 													</div>
+													<div class="modal-footer" style="padding: 20px;text-align: right;border-top: 1px solid #e5e5e5;">
+													  <button type="button" class="btn btn-default" data-dismiss="modal">Quay lại</button>
+													  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+													</div>
+												  </div>
 												</div>
-											</div>
-											<div class="modal-footer" style="padding: 20px;text-align: right;border-top: 1px solid #e5e5e5;">
-											  <button type="button" class="btn btn-default" data-dismiss="modal">Quay lại</button>
-											  <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-											</div>
-										  </div>
+											  </div>
 										</div>
-									  </div>
+										
+									</div>
+									
 									  
 									<!-- end content -->
 								</div>
@@ -907,12 +955,13 @@
 		<!-- PAGE RELATED PLUGIN(S) -->
 		<script src="js/plugin/moment/moment.min.js"></script>
 		<script src="js/plugin/fullcalendar/fullcalendar.min.js"></script>
+		<script src="js/plugin/fullcalendar-6.1.6/dist/index.global.js"></script>
+	
 
-		
 
-		<script>
-		
-		// DO NOT REMOVE : GLOBAL FUNCTIONS!
+
+
+	<script>
 		
 		$(document).ready(function() {
 			
@@ -922,7 +971,7 @@
 			    "use strict";
 			
 			    var date = new Date();
-				var month = ["Tháng một", "Tháng hai", "Tháng ba", "Tháng tư", "Tháng năm", "Tháng sáu", "Tháng bảy", "Tháng tám", "Tháng chín", "Tháng mười", "Tháng mười một", "Tháng mười hai"];
+				
 			    var d = date.getDate();
 			    var m = date.getMonth();
 			    var y = date.getFullYear();
@@ -998,7 +1047,7 @@
 					$('#eventthu').text(event.start); // Set title của modal thành tiêu đề của sự kiện
 					$('#eventModal').modal(); // Mở modal
 					}
-			    $('#calendar').fullCalendar({
+			    $('#calendars').fullCalendar({
 			
 					defaultView: 'agendaDay',
 					default: '07:00:00',
@@ -1191,6 +1240,159 @@
 		})
 
 		</script>
+
+<script>
+
+	document.addEventListener('DOMContentLoaded', function() {
+	  var calendarEl = document.getElementById('calendar');
+	  var date = new Date();
+				
+			    var d = date.getDate();
+			    var m = date.getMonth();
+			    var y = date.getFullYear();
+				
+	function handleEventClick(info) {
+		var options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+		var vietnameseDate = info.event.start.toLocaleDateString('vi-VN', options);
+		$('#eventModalLabel').text(info.event.title); 
+		$('#eventlop').text(info.event.extendedProps.lop); // Set title của modal thành tiêu đề của sự kiện
+		$('#eventphonghoc').text(info.event.extendedProps.phong); // Set title của modal thành tiêu đề của sự kiện
+		$('#eventtiet').text(info.event.extendedProps.tiet); // Set title của modal thành tiêu đề của sự kiện
+		$('#eventgiangvien').text(info.event.extendedProps.giangvien); // Set title của modal thành tiêu đề của sự kiện
+		$('#eventthu').text(vietnameseDate); // Set title của modal thành tiêu đề của sự kiện
+		$('#eventModal').modal(); // Mở modal
+		}
+	  var calendar = new FullCalendar.Calendar(calendarEl, {
+		
+		expandRows: true,
+		slotMinTime: '06:45',
+		slotMaxTime: '20:15',
+		// nowIndicator: true,
+		// headerToolbar: {
+		//   left: 'prevYear,prev,next,nextYear today',
+		//   center: 'title',
+		//   right: 'dayGridMonth,dayGridWeek,dayGridDay,listWeek'
+		// },
+		eventClick: handleEventClick,
+		initialView: 'timeGridDay',
+		initialDate: Date.today,
+		navLinks: true, // can click day/week names to navigate views
+		editable: false,
+		locale:'vi',	
+		
+		dayMaxEvents: true, // allow "more" link when too many events
+		events: [
+		{
+			title: 'Lập trình web',			
+			extendedProps: {
+				tiet: '2-7',
+				lop: '19DTHA2',
+				phong:'B09.11',
+				giangvien: 'Phạm Văn Hoài Lộc',
+			},
+			start: new Date(y, m, d - 1,06,45),
+			end: new Date(y, m, d - 1,09,00),
+			// className: ["event", "bg-color-darken"]
+			
+		},
+		
+			{
+			title: 'Lập trình C',
+			extendedProps: {
+				tiet: '2-7',
+				lop: '19DTHA2',
+				phong:'B09.11',
+				giangvien: 'Phạm Văn Hoài Lộc',
+			},
+			start: new Date(y, m, d, 06, 45),
+			end: new Date(y, m, d,09,00),
+			allDay: false,
+			// className: ["event", "bg-color-darken"]
+		}, {
+			title: 'Tiếng anh 2',
+			extendedProps: {
+				tiet: '2-7',
+				lop: '19DTHA2',
+				phong:'B09.11',
+				giangvien: 'Phạm Văn Hoài Lộc',
+			},
+			start: new Date(y, m, d, 09, 20),
+			end: new Date(y, m, d, 11, 35),
+			allDay: false,
+			// className: ["event", "bg-color-darken"]
+		},
+
+		{
+			title: 'Lập trình hướng đối tượng',
+			extendedProps: {
+				tiet: '2-7',
+				lop: '19DTHA2',
+				phong:'B09.11',
+				giangvien: 'Phạm Văn Hoài Lộc',
+			},
+			start: new Date(y, m, d + 1, 09, 20),
+			end: new Date(y, m, d + 1, 11, 35),
+			allDay: false,
+			// className: ["event", "bg-color-darken"]
+		},
+		]
+	  });
+	  
+		calendar.render();
+
+		$('.fc-prev-button, .fc-next-button, .fc-today-button').hide();
+	
+		$('#calendar-buttons #btn-prev').click(function () {
+			$('#my-prev-button').click();
+			return false;
+		});
+		
+		$('#calendar-buttons #btn-next').click(function () {
+			$('#my-next-button').click();
+			return false;
+		});
+		
+		$('#calendar-buttons #btn-today').click(function () {
+			$('.fc-today-button').click();
+			return false;
+		});
+
+		var weekCalendar = document.getElementById("weekcalendar");
+		var dayCalendar = document.getElementById("daycalendar");
+		var monthCalendar = document.getElementById("monthcalendar");
+
+	  	$('#mt').click(function () {
+			calendar.changeView('dayGridMonth');
+			weekCalendar.style.display = "none"; // Ẩn phần tử weekcalendar
+			dayCalendar.style.display = "none"; // Hiển thị phần tử daycalendar
+			monthCalendar.style.display = "block";
+		});
+		
+		$('#ag').click(function () {
+			calendar.changeView('timeGridWeek');
+			weekCalendar.style.display = "block"; // Ẩn phần tử weekcalendar
+			dayCalendar.style.display = "none"; // Hiển thị phần tử daycalendar
+			monthCalendar.style.display = "none";
+
+		});
+		
+		$('#td').click(function () {
+			calendar.changeView('timeGridDay');
+			weekCalendar.style.display = "none"; // Ẩn phần tử weekcalendar
+			dayCalendar.style.display = "block"; // Hiển thị phần tử daycalendar
+			monthCalendar.style.display = "none";
+
+		});	
+		$('#list').click(function () {
+			calendar.changeView('listWeek');
+			calendar.changeView('timeGridWeek');
+			weekCalendar.style.display = "block"; // Ẩn phần tử weekcalendar
+			dayCalendar.style.display = "none"; // Hiển thị phần tử daycalendar
+			monthCalendar.style.display = "none";
+		});		
+	});
+	
+  </script>
 
 		<!-- Your GOOGLE ANALYTICS CODE Below -->
 		<script>

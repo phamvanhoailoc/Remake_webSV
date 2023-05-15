@@ -663,29 +663,29 @@
 							-->
 							<div style="margin: 0 1.5rem 0 1.5rem !important; position: relative;">
 								<div class="row " style="margin-bottom: 1rem;">
-									<div class="col-md-3">
+									<div class="col-md-3" style="padding-top: 10px;">
 										<h1 style="margin: 12px 0 28px;"> <i class="fa fa-graduation-cap"></i>Thời khóa biểu </h1>
 									</div>
 									<div class="col-md-3">
 										<div style="margin-top: 1rem;">
 											<!-- add: non-hidden - to disable auto hide -->
-											<div class="btn-group">
-												<button class="btn btn-primary "  data-toggle="dropdown">
-													<a id="name-show" class=" btn-primary dropdown-toggle">Hiển thị theo</a>  <i class="fa fa-caret-down"></i>
+											<div class="btn-group" style="padding-top: 5px;">
+												<button class="btn btn-primary "  data-toggle="dropdown" style="min-width: 115.34px;">
+													<a id="name-show" style="color:#ffff">Hiển thị theo</a>  <i class="fa fa-caret-down"></i>
 												</button>
 												<ul class="dropdown-menu js-status-update pull-right">
-													<li class="active">
-														<a href="javascript:void(0);" id="td">Ngày</a>
+													<li  id="td">
+														<a href="javascript:void(0);" >Ngày</a>
 													</li>
-													<li>
-														<a href="javascript:void(0);" id="ag">Tuần</a>
+													<li id="ag" class="active">
+														<a href="javascript:void(0);" >Tuần</a>
 													</li>
-													<li>
-														<a href="javascript:void(0);" id="mt">Tháng</a>
+													<li id="mt">
+														<a href="javascript:void(0);" >Tháng</a>
 													</li>
-													<li>
-														<a href="javascript:void(0);" id="list">List</a>
-													</li>	
+													<!-- <li id="list">
+														<a href="javascript:void(0);" >List</a>
+													</li>	 -->
 												</ul>
 											</div>
 										</div>
@@ -700,12 +700,43 @@
 														</div>
 													</div>
 													
-													<div id="weekcalendar" class="col-xs-8" style="display: none;text-align: center;padding: 13px 0 0 0;">
+													<div id="weekcalendar" class="col-xs-8" style="display: block;text-align: center;padding: 13px 0 0 0;">
 														
-														<strong style="font-size:17px;padding: 6px;" id="toweek"></strong>
-														
+														<strong style="font-size:17px;padding: 6px; cursor: pointer;" id="toweek" data-toggle="dropdown"></strong>
+														<ul class="dropdown-menu js-status-update pull-right" style="  height: 200px; overflow-y: auto;">
+															<li  id="td" class="active">
+																<a href="javascript:void(0);" style="padding: 7px 20px;">Từ ngày 27/03/2023 đến 02/04/2023</a>
+															</li>
+															<li id="ag">
+																<a href="javascript:void(0);"style="padding: 7px 20px;" >Từ ngày 27/03/2023 đến 02/04/2023</a>
+															</li>
+															<li id="mt">
+																<a href="javascript:void(0);"style="padding: 7px 20px;" >Từ ngày 27/03/2023 đến 02/04/2023</a>
+															</li>
+															<li id="list">
+																<a href="javascript:void(0);"style="padding: 7px 20px;" >Từ ngày 27/03/2023 đến 02/04/2023</a>
+															</li>	
+															<li id="list">
+																<a href="javascript:void(0);"style="padding: 7px 20px;" >Từ ngày 27/03/2023 đến 02/04/2023</a>
+															</li>
+															<li id="list">
+																<a href="javascript:void(0);"style="padding: 7px 20px;" >Từ ngày 27/03/2023 đến 02/04/2023</a>
+															</li>
+															<li id="list">
+																<a href="javascript:void(0);"style="padding: 7px 20px;" >Từ ngày 27/03/2023 đến 02/04/2023</a>
+															</li>
+															<li id="list">
+																<a href="javascript:void(0);"style="padding: 7px 20px;" >Từ ngày 27/03/2023 đến 02/04/2023</a>
+															</li>
+															<li id="list">
+																<a href="javascript:void(0);"style="padding: 7px 20px;" >Từ ngày 27/03/2023 đến 02/04/2023</a>
+															</li>
+															<li id="list">
+																<a href="javascript:void(0);"style="padding: 7px 20px;" >Từ ngày 27/03/2023 đến 02/04/2023</a>
+															</li>
+														</ul>
 													</div>
-													<div id="daycalendar" class="col-xs-8" style="display: block;text-align: center;padding: 13px 0 0 0;">
+													<div id="daycalendar" class="col-xs-8" style="display: none;text-align: center;padding: 13px 0 0 0;">
 														
 														<strong style="font-size:17px;padding: 6px;" id="today"></strong>
 														
@@ -739,7 +770,7 @@
 									<!-- content goes here -->
 									<div style="margin: 0 1.5rem 0 1.5rem; position: relative;">
 										<div class="well">
-											<div class="alert alert-warning fade in">
+											<div class="alert alert-warning fade in" style="margin-bottom: 5px;">
 												<!-- <button class="close" data-dismiss="alert">
 													×
 												</button> -->
@@ -1099,18 +1130,9 @@
 			            calendar.fullCalendar('unselect');
 			        },
 					eventClick: handleEventClick,
-					// slotMinTime: '07:00:00',
-					// eventClick: function(info) {
-      				// alert('Title: ');},
+					
 			        events: [
-					// 	{
-			        //     title: 'All Day Event',
-			        //     start: new Date(y, m, 1),
-			        //     description: 'long description',
-											
-			        //     className: ["event", "bg-color-greenLight"],
-			        //     icon: 'fa-check'
-			        // },
+					
 					 {
 			            title: 'Lập trình web',
 						tiet: '2-7',
@@ -1122,21 +1144,7 @@
 			            className: ["event", "bg-color-darken"]
 			            
 			        },
-					//  {
-			        //     id: 999,
-			        //     title: 'Repeating Event',
-			        //     start: new Date(y, m, d - 3, 16, 0),
-			        //     allDay: false,
-			        //     className: ["event", "bg-color-blue"],
-			        //     icon: 'fa-clock-o'
-			        // }, {
-			        //     id: 999,
-			        //     title: 'Repeating Event',
-			        //     start: new Date(y, m, d + 4, 16, 0),
-			        //     allDay: false,
-			        //     className: ["event", "bg-color-blue"],
-			        //     icon: 'fa-clock-o'
-			        // },
+					
 					 {
 			            title: 'Lập trình C',
 						tiet: '2-7',
@@ -1170,17 +1178,9 @@
 			            allDay: false,
 			            className: ["event", "bg-color-darken"]
 			        },
-					//  {
-			        //     title: 'Smartadmin Open Day',
-			        //     start: new Date(y, m, 28),
-			        //     end: new Date(y, m, 29),
-			        //     className: ["event", "bg-color-darken"]
-			        // }
+					
 				],
-					// eventRender: function(info) {
-					// 	var start = moment(info.event.start).locale('vi').format('LL'); // định dạng ngày tháng bằng tiếng Việt
-					// 	info.el.querySelector('.fc-title').innerHTML += '<br>' + start; // hiển thị ngày tháng
-					// 	},
+					
 			        eventRender: function (event, element, icon) {
 				
 			            if (!event.description == "") {
@@ -1255,18 +1255,18 @@
 		var options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
 		var vietnameseDate = info.event.start.toLocaleDateString('vi-VN', options);
 		$('#eventModalLabel').text(info.event.title); 
-		$('#eventlop').text(info.event.extendedProps.lop); // Set title của modal thành tiêu đề của sự kiện
-		$('#eventphonghoc').text(info.event.extendedProps.phong); // Set title của modal thành tiêu đề của sự kiện
-		$('#eventtiet').text(info.event.extendedProps.tiet); // Set title của modal thành tiêu đề của sự kiện
-		$('#eventgiangvien').text(info.event.extendedProps.giangvien); // Set title của modal thành tiêu đề của sự kiện
-		$('#eventthu').text(vietnameseDate); // Set title của modal thành tiêu đề của sự kiện
+		$('#eventlop').text(info.event.extendedProps.lop); 
+		$('#eventphonghoc').text(info.event.extendedProps.phong); 
+		$('#eventtiet').text(info.event.extendedProps.tiet); 
+		$('#eventgiangvien').text(info.event.extendedProps.giangvien); 
+		$('#eventthu').text(vietnameseDate); 
 		$('#eventModal').modal(); // Mở modal
 		}
 	  var calendar = new FullCalendar.Calendar(calendarEl, {
 		
 		expandRows: true,
 		slotMinTime: '06:45',
-		slotMaxTime: '20:15',
+		slotMaxTime: '18:00',
 		// nowIndicator: true,
 		// headerToolbar: {
 		//   left: 'prevYear,prev,next,nextYear today',
@@ -1274,18 +1274,88 @@
 		//   right: 'dayGridMonth,dayGridWeek,dayGridDay,listWeek'
 		// },
 		eventClick: handleEventClick,
-		initialView: 'timeGridDay',
+		initialView: 'timeGridWeek',
 		initialDate: Date.today,
 		navLinks: true, // can click day/week names to navigate views
 		editable: false,
-		locale:'vi',	
-		
+		locale:'vi',
+		height: 600,
+		weekday: 'long',	
 		dayMaxEvents: true, // allow "more" link when too many events
+		allDayText: '',
+		allDaySlot: false,
+		navLinks: false,
+		
+		views: {
+			timeGrid: {
+			slotDuration: '00:45', // Khoảng thời gian giữa các dải thời gian trong thanh thời gian
+			slotLabelInterval: '00:45', // Khoảng thời gian giữa mỗi nhãn trong thanh thời gian
+			slotLabelContent: function(arg) {
+				var date = arg.date;
+				var html = '';
+
+				// Tùy chỉnh nhãn thời gian thành "Tiết 1"
+				if (date.getHours() === 6 && date.getMinutes() === 45) {
+				html = '<span>Tiết 1</span>';
+				}else if (date.getHours() === 7 && date.getMinutes() === 30) {
+					html = '<span>Tiết 2</span>';
+				}else if (date.getHours() === 8 && date.getMinutes() === 15) {
+					html = '<span>Tiết 3</span>';
+				}else if (date.getHours() === 9 && date.getMinutes() === 00) {
+					html = '<span>Tiết 4</span>';
+				}else if (date.getHours() === 9 && date.getMinutes() === 45) {
+					html = '<span>Tiết 5</span>';
+				}else if (date.getHours() === 10 && date.getMinutes() === 30) {
+					html = '<span>Tiết 6</span>';
+				}else if (date.getHours() === 11 && date.getMinutes() === 15) {
+					html = '<span>Tiết 7</span>';
+				}else if (date.getHours() === 12 && date.getMinutes() === 00) {
+					html = '<span>Tiết 8</span>';
+				}else if (date.getHours() === 12 && date.getMinutes() === 45) {
+					html = '<span>Tiết 9</span>';
+				}else if (date.getHours() === 13 && date.getMinutes() === 30) {
+					html = '<span>Tiết 10</span>';
+				}else if (date.getHours() === 14 && date.getMinutes() === 15) {
+					html = '<span>Tiết 11</span>';
+				}else if (date.getHours() === 15 && date.getMinutes() === 00) {
+					html = '<span>Tiết 12</span>';
+				}else if (date.getHours() === 15 && date.getMinutes() === 45) {
+					html = '<span>Tiết 13</span>';
+				}else if (date.getHours() === 16 && date.getMinutes() === 30) {
+					html = '<span>Tiết 14</span>';
+				}else if (date.getHours() === 17 && date.getMinutes() === 15) {
+					html = '<span>Tiết 15</span>';
+				}
+				else {
+				// Sử dụng định dạng mặc định cho các nhãn thời gian khác
+				html = '<span>' + date.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' }) + '</span>';
+				}
+
+				return { html: html };
+			}
+			},
+			timeGridWeek: {
+      		dayHeaderFormat: { weekday: 'long' },
+    		},
+			dayGridMonth: {
+      		dayHeaderFormat: { weekday: 'long' },
+    		}
+		},
+		titleRangeSeparator: ' đến ',
+		
+		titleRangeFormat: function(args) {
+			var startDate = args.start;
+			var endDate = args.end;
+			var startFormatted = startDate.toLocaleDateString(undefined, { day: '2-digit', month: '2-digit', year: 'numeric' });
+			var endFormatted = endDate.toLocaleDateString(undefined, { day: '2-digit', month: '2-digit', year: 'numeric' });
+			return 'Từ ngày ' + startFormatted + ' đến ' + endFormatted;
+		},
+		
 		events: [
 		{
 			title: 'Lập trình web',			
 			extendedProps: {
-				tiet: '2-7',
+				tiet: '1-3',
 				lop: '19DTHA2',
 				phong:'B09.11',
 				giangvien: 'Phạm Văn Hoài Lộc',
@@ -1299,8 +1369,8 @@
 			{
 			title: 'Lập trình C',
 			extendedProps: {
-				tiet: '2-7',
-				lop: '19DTHA2',
+				tiet: '1-3',
+				lop: '19DTHA3',
 				phong:'B09.11',
 				giangvien: 'Phạm Văn Hoài Lộc',
 			},
@@ -1311,13 +1381,13 @@
 		}, {
 			title: 'Tiếng anh 2',
 			extendedProps: {
-				tiet: '2-7',
-				lop: '19DTHA2',
+				tiet: '4-6',
+				lop: '19DTHA4',
 				phong:'B09.11',
 				giangvien: 'Phạm Văn Hoài Lộc',
 			},
-			start: new Date(y, m, d, 09, 20),
-			end: new Date(y, m, d, 11, 35),
+			start: new Date(y, m, d, 09, 00),
+			end: new Date(y, m, d, 11, 15),
 			allDay: false,
 			// className: ["event", "bg-color-darken"]
 		},
@@ -1325,22 +1395,33 @@
 		{
 			title: 'Lập trình hướng đối tượng',
 			extendedProps: {
-				tiet: '2-7',
-				lop: '19DTHA2',
+				tiet: '4-6',
+				lop: '19DTHA5',
 				phong:'B09.11',
 				giangvien: 'Phạm Văn Hoài Lộc',
 			},
-			start: new Date(y, m, d + 1, 09, 20),
-			end: new Date(y, m, d + 1, 11, 35),
+			start: new Date(y, m, d + 1, 09, 00),
+			end: new Date(y, m, d + 1, 11, 15),
 			allDay: false,
-			// className: ["event", "bg-color-darken"]
+			 //className: ["event", "bg-color-darken"]
 		},
-		]
+		],
+		eventContent: function(info) {
+			 var htmlContent= 
+			 "<div class='fc-event-title fc-sticky' style='font-size: 14px; line-height: 1.5;'>"
+				+info.event.title+
+				"</div><div class='fc-event-title fc-sticky' style='font-size: 14px; line-height: 1.5;'>Phòng: "
+				+info.event.extendedProps.phong+
+				"</div><div class='fc-event-title fc-sticky' style='font-size: 14px; line-height: 1.5;'> Tiết: "
+				+info.event.extendedProps.tiet+
+				"</div>" 
+			 return {html : htmlContent};
+			},
+
 	  });
-	  
+	  	
 		calendar.render();
 		
-
 		$('.fc-prev-button, .fc-next-button, .fc-today-button').hide();
 	  	$('.fc-toolbar-title').hide();
 		$('#calendar-buttons #btn-prev').click(function () {
@@ -1372,48 +1453,80 @@
 		var td = document.getElementById("td");
 		var list = document.getElementById("list");
 		today.innerHTML = fcdom.innerHTML;
-		//  var fontsize = document.getElementsByClassName(".fc-event-time");
-		// fontsize.style.fontsize = "14px";
+
+		
+		
+		function setPointer(){
+			var elements = document.querySelectorAll('.fc-event');
+			elements.forEach(function(element) {
+			element.style.cursor = "pointer";
+			});
+		}
+		
+		setInterval(setPointer, 10);
 		
 		setInterval(function() {
 			today.innerHTML = fcdom.innerHTML; 
 			tomonth.innerHTML = fcdom.innerHTML;
-			toweek.innerHTML = fcdom.innerHTML;// Cập nhật nội dung của today với nội dung của fcdom
+			toweek.innerHTML = fcdom.innerHTML;
 			}, 10);
 
 	  	$('#mt').click(function () {
 			calendar.changeView('dayGridMonth');
-			weekCalendar.style.display = "none"; // Ẩn phần tử weekcalendar
-			dayCalendar.style.display = "none"; // Hiển thị phần tử daycalendar
+			weekCalendar.style.display = "none"; 
+			dayCalendar.style.display = "none"; 
 			monthCalendar.style.display = "block";
 			tomonth.innerHTML = fcdom.innerHTML;
-			nameshow.innerHTML = mt.innerHTML;
+			nameshow.innerText = mt.innerText;
+			$('.active').removeClass('active');
+  
+			// Thêm lớp active cho phần tử có id 'mt'
+			$(this).addClass('active');
+			//$('#name-show').css('color','#ffffff');
+			
 		});
 		
 		$('#ag').click(function () {
 			calendar.changeView('timeGridWeek');
-			weekCalendar.style.display = "block"; // Ẩn phần tử weekcalendar
-			dayCalendar.style.display = "none"; // Hiển thị phần tử daycalendar
+			weekCalendar.style.display = "block"; 
+			dayCalendar.style.display = "none"; 
 			monthCalendar.style.display = "none";
 			toweek.innerHTML = fcdom.innerHTML;
-			nameshow.innerHTML = ag.innerHTML;
+			nameshow.innerText = ag.innerText;
+			$('.active').removeClass('active');
+			// Thêm lớp active cho phần tử có id 'mt'
+			$(this).addClass('active');
+			//$('#name-show').css('color','#ffffff');
+
 		});
 		
 		$('#td').click(function () {
 			calendar.changeView('timeGridDay');
-			weekCalendar.style.display = "none"; // Ẩn phần tử weekcalendar
-			dayCalendar.style.display = "block"; // Hiển thị phần tử daycalendar
+			weekCalendar.style.display = "none"; 
+			dayCalendar.style.display = "block"; 
 			monthCalendar.style.display = "none";
 			today.innerHTML = fcdom.innerHTML;
-			nameshow.innerHTML = td.innerHTML;
+			nameshow.innerText = td.innerText;
+			$('.active').removeClass('active');
+  
+			// Thêm lớp active cho phần tử có id 'mt'
+			$(this).addClass('active');
+			//$('#name-show').css('color','#ffffff');
+
 		});	
 		$('#list').click(function () {
 			calendar.changeView('listWeek');
-			calendar.changeView('timeGridWeek');
-			weekCalendar.style.display = "block"; // Ẩn phần tử weekcalendar
-			dayCalendar.style.display = "none"; // Hiển thị phần tử daycalendar
+			//calendar.changeView('timeGridWeek');
+			weekCalendar.style.display = "block"; 
+			dayCalendar.style.display = "none"; 
 			monthCalendar.style.display = "none";
-			nameshow.innerHTML = list.innerHTML;
+			nameshow.innerText = list.innerText;
+			$('.active').removeClass('active');
+  
+			// Thêm lớp active cho phần tử có id 'mt'
+			$(this).addClass('active');
+			//$('#name-show').css('color','#ffffff');
+
 		});		
 	});
 	
